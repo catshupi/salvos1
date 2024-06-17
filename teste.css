@@ -1,0 +1,33 @@
+:root{
+    --cor1: #C3D8EA;
+    --fontsize: large;
+    --fontfamily: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+body{
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #9cafc0;
+}
+
+h1{
+    color: var(--cor1);
+    font-size: var(--fontsize);
+    font-family: var(--fontfamily);
+}
+
+footer {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--cor1);
+    color: #ffffff;
+    text-align: center;
+    font-size: var(--fontsize);
+    font-family: var(--fontfamily);
+    border-radius: 10px 10px 0 0;
+    position: fixed;
+    bottom: 0;
+}
