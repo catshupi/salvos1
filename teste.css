@@ -1,22 +1,32 @@
-:root{
-    --cor1: #C3D8EA;
+:root {
+    --cor1: #f8b7ef;
     --fontsize: large;
     --fontfamily: "Comic Sans MS", "Comic Sans", cursive;
 }
 
-body{
+body {
     height: 100vh;
     margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #9cafc0;
+    background-color: #fff1f8;
 }
 
-h1{
-    color: var(--cor1);
-    font-size: var(--fontsize);
-    font-family: var(--fontfamily);
+.content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
 }
 
 footer {
@@ -30,4 +40,106 @@ footer {
     border-radius: 10px 10px 0 0;
     position: fixed;
     bottom: 0;
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 190px;
+    height: 254px;
+    perspective: 1000px;
+    font-family: sans-serif;
+    margin: 20px;
+}
+
+.titulo {
+    font-size: 1.3em;
+    font-weight: 900;
+    text-align: center;
+    margin: 0;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border: 1px solid white;
+    border-radius: 1rem;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.flip-card-back {
+    transform: rotateY(180deg);
+}
+
+/* Classes específicas para cores */
+
+.roxo .flip-card-front {
+    background: linear-gradient(120deg, rgb(207, 212, 255) 60%, rgb(239, 239, 255) 88%, rgb(206, 201, 223) 40%, rgba(105, 35, 185, 0.603) 48%);
+    color: rgb(89, 80, 167);
+}
+
+.roxo .flip-card-back {
+    background: linear-gradient(120deg, rgb(72, 42, 128) 30%, rgb(89, 80, 167) 88%, rgb(207, 212, 255) 40%, rgba(105, 35, 185, 0.603) 78%);
+    color: white;
+}
+
+.amarelo .flip-card-front {
+    background: linear-gradient(120deg, rgba(255, 228, 139, 0.863) 60%, rgba(255, 236, 184, 0.692) 88%, rgb(241, 225, 189) 40%, rgb(255, 204, 126) 48%);
+    color: rgb(211, 141, 62);
+}
+
+.amarelo .flip-card-back {
+    background: linear-gradient(120deg, rgba(255, 187, 85, 0.726) 30%, rgb(250, 174, 60) 88%, rgba(255, 228, 139, 0.863) 40%, rgb(255, 204, 126) 78%);
+    color: white;
+}
+
+.rosa .flip-card-front {
+    background: linear-gradient(120deg, rgba(255, 139, 197, 0.76) 60%, rgba(255, 184, 243, 0.692) 88%, rgb(235, 191, 220) 40%, rgb(255, 156, 242) 48%);
+    color: rgb(211, 62, 136);
+}
+
+.rosa .flip-card-back {
+    background: linear-gradient(120deg, rgba(255, 74, 114, 0.829) 30%, rgb(255, 118, 214) 88%, rgba(255, 139, 197, 0.76) 40%, rgb(255, 156, 242) 78%);
+    color: white;
+}
+
+.bege .flip-card-front {
+    background: linear-gradient(120deg, rgba(255, 139, 197, 0.76) 60%, rgba(255, 184, 243, 0.692) 88%, rgb(235, 191, 220) 40%, rgb(255, 156, 242) 48%);
+    color: rgb(211, 62, 136);
+}
+
+.bege .flip-card-back {
+    background: linear-gradient(120deg, rgba(255, 74, 114, 0.829) 30%, rgb(255, 118, 214) 88%, rgba(255, 139, 197, 0.76) 40%, rgb(255, 156, 242) 78%);
+    color: white;
+}
+
+/* Ajustes de estilo para conteúdo */
+.card-content {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    font-size:14px;
 }
